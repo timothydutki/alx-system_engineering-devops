@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+contents=$(ls)
+echo "The contents of the current directory are: $contents"
+

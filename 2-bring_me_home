@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+cd ~
+echo "The current working directory is now: $(pwd)"
+

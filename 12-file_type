@@ -1,0 +1,3 @@
+
+echoo "The type of file /tmp/iamafile is: $file_type"
+"ALX"
