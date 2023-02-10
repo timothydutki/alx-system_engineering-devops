@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+for dir in */; do
+  if [ -d "$dir" ]; then
+    chmod 755 "$dir"
+  fi
+done
+

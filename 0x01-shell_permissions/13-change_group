@@ -1,0 +1,15 @@
+#!/bin/bash
+
+filename="hello"
+group_name="school"
+
+gid=$(getent group $group_name | cut -d: -f3)
+
+chown :$gid $filename
+
+if [ $? -eq 0 ]; then
+  echo "Successfully changed the group owner of $filename to $group_name."
+else
+  echo "An error occurred while changing the group owner of $filename to $group_name."
+fi
+
