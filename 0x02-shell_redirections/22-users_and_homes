@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Sort the contents of the /etc/passwd file by the first field (username)
+# Extract the username and home directory fields (1st and 6th fields)
+# and display them, separated by a colon
+sort /etc/passwd | awk -F: '{print $1 ": " $6}'
+

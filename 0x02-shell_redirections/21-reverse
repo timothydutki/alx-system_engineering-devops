@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# Read input from stdin
+input=$(cat -)
+
+# Reverse the input using parameter expansion
+reversed=`echo $input | rev`
+
+# Output the reversed input
+echo "$reversed"
+

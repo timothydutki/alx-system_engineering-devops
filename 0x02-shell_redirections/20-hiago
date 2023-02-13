@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# remove all 'c' and 'C' from input
+tr -d 'cC'
+

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# The line number is stored in a variable
+line_number=3
+
+# The file is read using a while loop
+counter=0
+while read line; do
+  ((counter++))
+  if [ $counter -eq $line_number ]; then
+    # The desired line is printed
+    echo "$line"
+    break
+  fi
+done < iacta
+
