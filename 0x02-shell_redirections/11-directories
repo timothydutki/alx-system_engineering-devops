@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# get the number of directories in the current directory
+num_dirs=$(find . -type d -not -path "*/\.*" -not -path "." -not -path ".." | wc -l)
+
+# subtract 1 to exclude the current directory itself
+num_dirs=$(($num_dirs - 1))
+
+# print the result
+echo $num_dirs
+

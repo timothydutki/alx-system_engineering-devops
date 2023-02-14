@@ -1,0 +1,29 @@
+#!/bin/bash
+
+find_files() {
+  local dir="$1"
+  find "$dir" -type f -name "*.js" -print0
+}
+
+delete_files() {
+  local files=("$@")
+  if [ ${#files[@]} -eq 0 ]; then
+    echo "No files found to delete."
+    exit 0
+  fi
+  echo "The following files will be deleted:"
+  printf "%s\n" "${files[@]}"
+  read -p "Are you sure you want to delete these files? (y/n) " choice
+  case "$choice" in 
+    y|Y ) echo "Deleting files..." ;;
+    * ) echo "Aborted."; exit 0 ;;
+  esac
+  for file in "${files[@]}"; do
+    rm "$file"
+  done
+  echo "Done."
+}
+
+files=($(find_files . -print0 | xargs -0))
+delete_files "${files[@]}"
+

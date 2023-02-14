@@ -1,0 +1,16 @@
+#!/bin/bash
+
+file="iacta"
+
+# Check that the file exists and is not empty
+if [ ! -s "$file" ]; then
+  echo "Error: file $file does not exist or is empty"
+  exit 1
+fi
+
+# Get the last line of the file
+last_line=$(tail -n 1 "$file")
+
+# Duplicate the last line
+echo "$last_line" >> "$file"
+
