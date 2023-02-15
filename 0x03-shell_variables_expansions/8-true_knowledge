@@ -1,0 +1,8 @@
+#!/bin/bash
+
+true_knowledge=$TRUEKNOWLEDGE
+
+result=$((true_knowledge+128))
+
+echo $result
+

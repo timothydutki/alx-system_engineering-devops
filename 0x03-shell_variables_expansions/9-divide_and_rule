@@ -1,0 +1,5 @@
+#!/bin/bash
+
+RESULT=$(echo "scale=2; $POWER / $DIVIDE" | bc)
+echo "${RESULT}" | awk '{printf "%d\n", $0}'
+

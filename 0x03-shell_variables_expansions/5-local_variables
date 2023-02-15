@@ -1,0 +1,11 @@
+#!/bin/bash
+
+echo "Local variables:"
+set | grep "^[[:alpha:]_][[:alnum:]_]*=.*$" | cut -d= -f1
+
+echo "Environment variables:"
+env | cut -d= -f1
+
+echo "Functions:"
+declare -F | cut -d' ' -f3
+

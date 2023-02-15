@@ -1,0 +1,4 @@
+#!/bin/bash
+IFS=':' read -ra dirs_in_path <<< "$PATH"
+echo "${#dirs_in_path[@]}"
+
